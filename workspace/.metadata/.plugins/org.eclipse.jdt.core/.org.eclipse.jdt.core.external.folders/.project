@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>.org.eclipse.jdt.core.external.folders</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>.link1</name>
+			<type>2</type>
+			<location>C:/Program Files/Java/jdk1.8.0_202</location>
+		</link>
+		<link>
+			<name>.link3</name>
+			<type>2</type>
+			<location>D:/A_TeachingMaterial/webpro/apache-tomcat-8.5.87-src</location>
+		</link>
+	</linkedResources>
+</projectDescription>

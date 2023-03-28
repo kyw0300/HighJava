@@ -1,0 +1,64 @@
+package kr.or.ddit.member.dao;
+
+import java.util.List;
+import java.util.Map;
+
+import kr.or.ddit.mvc.dao.MemberDaoImpl;
+import kr.or.ddit.vo.MemberVO;
+
+public class MemberDaoImpl implements IMemberDao {
+	
+	// 싱글톤
+		private static MemberDaoImpl instance;
+		private MemberDaoImpl() {}
+		
+		public static MemberDaoImpl getInstance() {
+			if(instance == null) {
+				instance = new MemberDaoImpl();
+			}
+			return instance;
+		}
+	
+	@Override
+	public int insertMember(MemberVO memVO) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int deleteMember(String memId) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int updateMember(MemberVO memVO) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public List<MemberVO> getAllMember() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int getMemberCount(String memId) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int updateMember2(Map<String, String> paramMap) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int updateMember3(Map<String, String> dataMap) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Documents/아파치/debugger-app-2.0.27.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Documents/아파치/fontbox-2.0.27.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Documents/아파치/pdfbox-2.0.27.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Documents/아파치/pdfbox-app-2.0.27.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Documents/아파치/pdfbox-debugger-2.0.27.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Documents/아파치/pdfbox-tools-2.0.27.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Documents/아파치/preflight-2.0.27.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Documents/아파치/preflight-app-2.0.27.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Documents/아파치/xmpbox-2.0.27.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

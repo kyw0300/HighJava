@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0/EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="board">
+	<select id="selectAll" resultType="kr.or.ddit.vo.BoardVO">
+		select BOARD_NO,BOARD_TITLE,BOARD_WRITER,BOARD_CNT 
+		  from JDBC_BOARD 
+		 order by BOARD_NO desc
+	</select>
+	
+	<select id="selectBoardNo" parameterType="int" resultType="BoardVo">
+		select BOARD_NO,BOARD_TITLE,BOARD_WRITER,BOARD_CONTENT,BOARD_DATE,BOARD_CNT 
+		  from JDBC_BOARD where BOARD_NO= #{no} 
+	</select>
+	
+	<insert id="insertBoard" parameterType="BoardVo">
+		insert into jdbc_board(BOARD_NO,BOARD_TITLE,BOARD_WRITER,BOARD_DATE,BOARD_CONTENT) 
+		values(board_seq.nextval, #{title} , #{writer} ,sysdate, #{content} )
+	</insert>
+	
+	<delete id="deleteBoard" parameterType="int">
+		delete from JDBC_BOARD where BOARD_NO = #{no}
+	</delete>
+</mapper>

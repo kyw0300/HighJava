@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Desktop/조별과제/4조/4_test/설치 jar/itext/slf4/slf4j-api-2.0.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Desktop/조별과제/4조/4_test/설치 jar/itext/slf4/slf4j-simple-2.0.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Desktop/조별과제/4조/4_test/설치 jar/itext/iText7-Core-7.2.5/barcodes-7.2.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Desktop/조별과제/4조/4_test/설치 jar/itext/iText7-Core-7.2.5/barcodes-7.2.5-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Desktop/조별과제/4조/4_test/설치 jar/itext/iText7-Core-7.2.5/barcodes-7.2.5-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Desktop/조별과제/4조/4_test/설치 jar/itext/iText7-Core-7.2.5/commons-7.2.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Desktop/조별과제/4조/4_test/설치 jar/itext/iText7-Core-7.2.5/commons-7.2.5-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Desktop/조별과제/4조/4_test/설치 jar/itext/iText7-Core-7.2.5/commons-7.2.5-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Desktop/조별과제/4조/4_test/설치 jar/itext/iText7-Core-7.2.5/font-asian-7.2.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Desktop/조별과제/4조/4_test/설치 jar/itext/iText7-Core-7.2.5/forms-7.2.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Desktop/조별과제/4조/4_test/설치 jar/itext/iText7-Core-7.2.5/forms-7.2.5-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Desktop/조별과제/4조/4_test/설치 jar/itext/iText7-Core-7.2.5/forms-7.2.5-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Desktop/조별과제/4조/4_test/설치 jar/itext/iText7-Core-7.2.5/hyph-7.2.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Desktop/조별과제/4조/4_test/설치 jar/itext/iText7-Core-7.2.5/io-7.2.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Desktop/조별과제/4조/4_test/설치 jar/itext/iText7-Core-7.2.5/io-7.2.5-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Desktop/조별과제/4조/4_test/설치 jar/itext/iText7-Core-7.2.5/io-7.2.5-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Desktop/조별과제/4조/4_test/설치 jar/itext/iText7-Core-7.2.5/kernel-7.2.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Desktop/조별과제/4조/4_test/설치 jar/itext/iText7-Core-7.2.5/kernel-7.2.5-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Desktop/조별과제/4조/4_test/설치 jar/itext/iText7-Core-7.2.5/kernel-7.2.5-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Desktop/조별과제/4조/4_test/설치 jar/itext/iText7-Core-7.2.5/layout-7.2.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Desktop/조별과제/4조/4_test/설치 jar/itext/iText7-Core-7.2.5/layout-7.2.5-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Desktop/조별과제/4조/4_test/설치 jar/itext/iText7-Core-7.2.5/layout-7.2.5-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Desktop/조별과제/4조/4_test/설치 jar/itext/iText7-Core-7.2.5/pdfa-7.2.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Desktop/조별과제/4조/4_test/설치 jar/itext/iText7-Core-7.2.5/pdfa-7.2.5-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Desktop/조별과제/4조/4_test/설치 jar/itext/iText7-Core-7.2.5/pdfa-7.2.5-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Desktop/조별과제/4조/4_test/설치 jar/itext/iText7-Core-7.2.5/pdftest-7.2.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Desktop/조별과제/4조/4_test/설치 jar/itext/iText7-Core-7.2.5/pdftest-7.2.5-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Desktop/조별과제/4조/4_test/설치 jar/itext/iText7-Core-7.2.5/pdftest-7.2.5-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Desktop/조별과제/4조/4_test/설치 jar/itext/iText7-Core-7.2.5/sign-7.2.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Desktop/조별과제/4조/4_test/설치 jar/itext/iText7-Core-7.2.5/sign-7.2.5-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Desktop/조별과제/4조/4_test/설치 jar/itext/iText7-Core-7.2.5/sign-7.2.5-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Desktop/조별과제/4조/4_test/설치 jar/itext/iText7-Core-7.2.5/styled-xml-parser-7.2.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Desktop/조별과제/4조/4_test/설치 jar/itext/iText7-Core-7.2.5/styled-xml-parser-7.2.5-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Desktop/조별과제/4조/4_test/설치 jar/itext/iText7-Core-7.2.5/styled-xml-parser-7.2.5-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Desktop/조별과제/4조/4_test/설치 jar/itext/iText7-Core-7.2.5/svg-7.2.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Desktop/조별과제/4조/4_test/설치 jar/itext/iText7-Core-7.2.5/svg-7.2.5-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-14/Desktop/조별과제/4조/4_test/설치 jar/itext/iText7-Core-7.2.5/svg-7.2.5-sources.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

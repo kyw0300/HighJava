@@ -1,0 +1,75 @@
+package kr.or.ddit.dao;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+
+import kr.or.ddit.util.MybatisSqlSessionFactory;
+import kr.or.ddit.vo.BoardVO;
+
+public class BoardDaoImpl implements IBoardDAO {
+	private static BoardDaoImpl instance;
+	private BoardDaoImpl() {}
+	
+	public static BoardDaoImpl getInstance() {
+		if(instance == null) instance = new BoardDaoImpl();
+		return instance;
+	}
+	
+	@Override
+	public List<BoardVO> selectAll() {
+		SqlSession session = null;
+		List<BoardVO> list = null;
+		
+		try {
+			session = MybatisSqlSessionFactory.getSqlSession();
+			list = session.selectList("board.selectAll");
+		} finally {
+			session.close();
+		}
+		return list;
+	}
+
+	@Override
+	public int insertBoard(BoardVO vo) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public BoardVO selectBoardNo(int no) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int getBoardCount(int no) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int update(BoardVO vo) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int delete(int no) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int cntPlus(int no) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public List<BoardVO> search(String word) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,269 @@
+package kr.or.ddit.controller;
+
+import java.util.List;
+import java.util.Scanner;
+
+import kr.or.ddit.service.BoardServiceImpl;
+import kr.or.ddit.vo.BoardVO;
+
+public class BoardController {
+	private Scanner scan;
+	private BoardServiceImpl service;
+	
+	public BoardController() {
+		scan = new Scanner(System.in);
+		service = BoardServiceImpl.getInstance();
+	}
+	
+	public static void main(String[] args) {
+//		new BoardController().start();
+		new BoardController().boardStart();
+	}
+	
+	public void boardStart() {
+		String title = null;
+		int choice = -1;
+		while(true) {
+			if(choice!=3) {
+				title = null;
+			}
+			choice = displayMenu(title);
+			
+			switch (choice) {
+			case 1: insertBoard();  // 글 작성
+//				boardList = service.selectAll();
+				break;
+			case 2: selectBoardNo();  // 게시글보기
+//				boardList = service.selectAll();
+				break;
+			case 3: title = searchBoard();
+//				boardList = search(); // 검색
+				break; 
+			case 0:
+				System.out.println("게시판 프로그램을 종료합니다...");
+				System.exit(0); break;
+			default:
+				System.out.println("번호를 잘못 입력하셨습니다. 다시 입력해주세요!");
+			}
+		}
+	}
+	
+	public int displayMenu(String searchTitle) {
+		System.out.println();
+		System.out.println("-------------------------------------------------------------");
+		System.out.println(" No	        제 목            작성자 	조회수   ");
+		System.out.println("-------------------------------------------------------------");
+		
+		List<BoardVO> boardList = null;
+		if(searchTitle == null) {
+			boardList = service.selectAll();
+		} else {
+			boardList = service.search(searchTitle);
+		}
+		
+		if(boardList == null || boardList.size() == 0) {
+			System.out.println("등록된 글이 없습니다...");
+		} else {
+			// 반복문을 이용하여 출력
+			for(BoardVO vo : boardList) {
+//				System.out.printf("%5d %15s %10s %5d \n",vo.getBOARD_NO(),vo.getBOARD_TITLE(),vo.getBOARD_WRITER(),vo.getBOARD_CNT());
+				System.out.println(vo.getBOARD_NO()+"\t"+vo.getBOARD_TITLE()+"\t\t"+vo.getBOARD_WRITER()+"\t\t"+vo.getBOARD_CNT());
+			}
+		}
+		
+		System.out.println("-------------------------------------------------------------");
+		System.out.println("메뉴 : 1.새글작성  2.게시글보기  3.검색  0.작업끝");
+		System.out.print("작업선택 >> ");
+		return scan.nextInt();
+	}
+	
+	private String searchBoard() {
+		System.out.println();
+		System.out.println("검색 작업");
+		System.out.println("-------------------------------------------------------------");
+		System.out.print("- 검색할 제목 입력 : ");
+		scan.nextLine();
+		String word = scan.nextLine();
+		return word;
+	}
+	
+	private void start() {
+		List<BoardVO> boardList = service.selectAll();
+		while(true) {
+		System.out.println("-------------------------------------------------------------");
+		System.out.println(" No	        제 목            작성자 	조회수   ");
+		System.out.println("-------------------------------------------------------------");
+		
+		//전체 게시판을 출력하는 메서드
+		if(boardList == null || boardList.size() == 0) {
+			System.out.println("등록된 글이 없습니다...");
+		} else {
+			// 반복문을 이용하여 출력
+			for(BoardVO vo : boardList) {
+				System.out.printf("%5d%15s%10s%5d\n",vo.getBOARD_NO(),vo.getBOARD_TITLE(),vo.getBOARD_WRITER(),vo.getBOARD_CNT());
+			}
+		}
+		
+		System.out.println("-------------------------------------------------------------");
+		System.out.println("메뉴 : 1.새글작성  2.게시글보기  3.검색  0.작업끝");
+		System.out.print("작업선택 >> ");
+		
+			int choice = scan.nextInt();
+			
+			switch (choice) {
+			case 1: insertBoard();  // 글 작성
+				boardList = service.selectAll();
+				break;
+			case 2: selectBoardNo();  // 게시글보기
+				boardList = service.selectAll();
+				break;
+			case 3: 
+				boardList = search(); // 검색
+				break; 
+			case 0: System.exit(0); break;
+			default:
+				System.out.println("번호를 잘못 입력하셨습니다. 다시 입력해주세요!");
+			}
+		}
+	}
+	
+	private void insertBoard() {
+		System.out.println();
+		System.out.println("새글 작성하기");
+		System.out.println("-------------------------------------------------------------");
+		
+		scan.nextLine(); // 입력 버퍼 비우기
+		System.out.print("제  목 : ");
+		String title = scan.nextLine();
+		
+		System.out.print("작성자 : ");
+		String writer = scan.nextLine();
+		
+		System.out.print("내  용 : ");
+		String content = scan.nextLine();
+		
+		// 입력 받은 자료를 VO에 저장하기
+		BoardVO vo = new BoardVO();
+		vo.setBOARD_TITLE(title);
+		vo.setBOARD_WRITER(writer);
+		vo.setBOARD_CONTENT(content);
+		
+		int cnt = service.insertBoard(vo);
+		if(cnt > 0) {
+			System.out.println();
+			System.out.println("새글이 추가되었습니다.");
+			System.out.println();
+		} else {
+			System.out.println();
+			System.out.println("글 작성에 실패했습니다...");
+			System.out.println();
+		}
+	}
+	
+	private void selectBoardNo() {
+		System.out.println();
+		System.out.print("보기를 원하는 게시물 번호 입력 >> ");
+		int no = scan.nextInt();
+		
+//		int count = service.getBoardCount(no);
+//		if(count == 0) {
+//			System.out.println(no + "번 글은 존재하지 않습니다...");
+//			System.out.println();
+//			return;
+//		}
+		
+		// 조회수 증가 메서드 호출
+//		service.cntPlus(no); 서비스에서 해주는걸로 변경
+		
+		BoardVO vo = service.selectBoardNo(no);
+		
+		if(vo == null) {
+			System.out.println(no + "번의 게시글은 존재하지 않습니다...");
+			return;
+		}
+		
+		System.out.println();
+		System.out.println(no + "번글 내용");
+		System.out.println("-------------------------------------------------------------");
+		System.out.println("- 제  목 : " + vo.getBOARD_TITLE());
+		System.out.println("- 작성자 : " + vo.getBOARD_WRITER());
+		System.out.println("- 내  용 : " + vo.getBOARD_CONTENT());
+		System.out.println("- 작성일 : " + vo.getBOARD_DATE());
+		System.out.println("- 조회수 : " + vo.getBOARD_CNT());
+		System.out.println("-------------------------------------------------------------");
+		System.out.println("메뉴 : 1.수정  2.삭제  3.리스트로 가기");
+		System.out.print("작업선택 >> ");
+		int choice = scan.nextInt();
+		
+		switch (choice) {
+		case 1: update(no); break; //수정
+		case 2: delete(no); break; //삭제
+		case 3: return; // 리스트로가기
+		default:
+			System.out.println("번호를 다시 입력해주세요.");
+		}
+	}
+	
+	private void update(int no) {
+		System.out.println();
+		System.out.println("수정 작업하기");
+		System.out.println("-------------------------------------------------------------");
+		System.out.print("- 제  목 : ");
+		scan.nextLine();
+		String newTitle = scan.nextLine();
+		
+		System.out.print("- 내  용 : ");
+		String newContent = scan.nextLine();
+		
+		// 입력한 값과 게시글 번호를 VO객체에 저장한다.
+		BoardVO vo = new BoardVO();
+		vo.setBOARD_NO(no);
+		vo.setBOARD_TITLE(newTitle);
+		vo.setBOARD_CONTENT(newContent);
+		
+		//서비스 업데이트 호출
+		int cnt = service.update(vo);
+		if (cnt > 0) {
+			System.out.println(no + "번글이 수정되었습니다.");
+		} else {
+			System.out.println(no + "번글 수정에 실패했습니다...");
+		}
+	}
+	
+	private void delete(int no) {
+		int cnt = service.delete(no);
+		if (cnt > 0) {
+			System.out.println(no + "번글이 삭제되었습니다.");
+		} else {
+			System.out.println(no + "번글 삭제에 실패했습니다...");
+		}
+	}
+	
+	private List<BoardVO> search() {
+		System.out.println();
+		System.out.println("검색 작업");
+		System.out.println("-------------------------------------------------------------");
+		System.out.print("- 검색할 제목 입력 : ");
+		scan.nextLine();
+		String word = scan.nextLine();
+		List<BoardVO> searchList;
+		
+		if("".equals(word)) {
+			searchList = service.selectAll();
+			return searchList;
+		}
+		
+		searchList = service.search(word);
+		return searchList;
+		// 출력
+//		if(searchList == null || searchList.size() == 0) {
+//			System.out.println("조건에 맞는 글이 없습니다...");
+//		} else {
+//			// 반복문을 이용하여 출력
+//			for(BoardVO vo : searchList) {
+//				System.out.printf("%5d%15s%10s%5d\n",vo.getNo(),vo.getTitle(),vo.getWriter(),vo.getCnt());
+//			}
+//		}
+		
+	}
+}

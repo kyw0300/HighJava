@@ -1,0 +1,129 @@
+package kr.or.ddit.member.dao;
+
+import java.util.List;
+import java.util.Map;
+
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+
+import kr.or.ddit.util.MybatisSqlSessionFactory;
+import kr.or.ddit.vo.MemberVO;
+
+public class MemberDaoImpl implements IMemberDao {
+	
+	// 싱글톤
+	private static MemberDaoImpl instance;
+	private MemberDaoImpl() {}
+		
+	public static MemberDaoImpl getInstance() {
+		if(instance == null) {
+			instance = new MemberDaoImpl();
+		}
+		return instance;
+	}
+	
+	
+	@Override
+	public int insertMember(MemberVO memVO) {
+		SqlSession session = null;
+		int cnt = 0;
+		
+		try {
+			session = MybatisSqlSessionFactory.getSqlSession();
+			cnt = session.insert("member.insertMember", memVO);
+		} finally {
+			session.commit();
+			session.close();
+		}
+		return cnt;
+	}
+
+	@Override
+	public int deleteMember(String memId) {
+		SqlSession session = null;
+		int cnt = 0;
+		
+		try {
+			session = MybatisSqlSessionFactory.getSqlSession();
+			cnt = session.delete("member.deleteMember",memId);
+		} finally {
+			session.commit();
+			session.close();
+		}
+		return cnt;
+	}
+
+	@Override
+	public int updateMember(MemberVO memVO) {
+		SqlSession session = null;
+		int cnt = 0;
+		
+		try {
+			session = MybatisSqlSessionFactory.getSqlSession();
+			cnt = session.insert("member.updateMember", memVO);
+		} finally {
+			session.commit();
+			session.close();
+		}
+		return cnt;
+	}
+
+	@Override
+	public List<MemberVO> getAllMember() {
+		SqlSession session = null;
+		List<MemberVO> allMember = null;
+		
+		try {
+			session = MybatisSqlSessionFactory.getSqlSession();
+			allMember = session.selectList("member.getAllMember");
+		} finally {
+			session.close();
+		}
+		return allMember;
+	}
+
+	@Override
+	public int getMemberCount(String memId) {
+		SqlSession session = null;
+		int count = 0;
+		
+		try {
+			session = MybatisSqlSessionFactory.getSqlSession();
+			count = session.selectOne("member.getMemberCount",memId);
+		} finally {
+			session.close();
+		}
+		return count;
+	}
+
+	@Override
+	public int updateMember2(Map<String, String> paramMap) {
+		SqlSession session = null;
+		int cnt = 0;
+		
+		try {
+			session = MybatisSqlSessionFactory.getSqlSession();
+			cnt = session.update("member.updateMember2", paramMap);
+		} finally {
+			session.commit();
+			session.close();
+		}
+		return cnt;
+	}
+
+	@Override
+	public int updateMember3(Map<String, String> dataMap) {
+		SqlSession session = null;
+		int cnt = 0;
+		
+		try {
+			session = MybatisSqlSessionFactory.getSqlSession();
+			cnt = session.update("member.updateMember3", dataMap);
+		} finally {
+			session.commit();
+			session.close();
+		}
+		return cnt;
+	}
+
+}
