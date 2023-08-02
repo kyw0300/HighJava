@@ -16,3 +16,5 @@ select * from prod where prod_id = ??
 select * from Á÷¿ø where ¿¬ºÀ>=1500
 UNION ALL
 select * from Á÷¿ø where ¿¬ºÀ>=2000;
+
+select * from MYMEMBER
