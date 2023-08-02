@@ -19,8 +19,8 @@
 	  10 / 4 = 2.5
  -->
 
-<form action="/webTest/requestTest02.do" method="get">
-	<table border='1'>
+<form action="<%=request.getContextPath() %>/requestTest02.do" method="get">
+	<table>
 		<tr>
 			<td><input type="text" size="10" name="num1"></td>
 			<td>
